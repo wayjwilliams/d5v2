@@ -1,5 +1,4 @@
 require './shipment'
-require 'pry'
 
 
 money = 0
@@ -15,6 +14,10 @@ fry_bonus = 0
 amy_bonus = 0
 bender_bonus = 0
 leela_bonus = 0
+fry_pilot = 0
+amy_pilot = 0
+bender_pilot = 0
+leela_pilot = 0
 
 
 
@@ -50,40 +53,20 @@ values_array = line.chomp.split(",")
     mercury_total += shipment.money
   end
 
-
   case shipment.destination
   when "Earth"
     fry_bonus += shipment.money * 0.10
-    pilot = "Fry"
+    fry_pilot += 1
   when "Mars"
     amy_bonus += shipment.money * 0.10
-    pilot = "Amy"
+    amy_pilot += 1
   when "Uranus"
     bender_bonus += shipment.money * 0.10
-    pilot = "Bender"
+    bender_pilot += 1
   else
     leela_bonus += shipment.money * 0.10
-    pilot = "Leela"
-
-  pilots = []
-  pilots << pilot
-
-  count = 0
-
-  pilots.each do |trip|
-  if trip == "Fry"
-    count = count + 1
-  # when trip == "Amy"
-  #   counter == counter + 1
-  # when trip == "Bender"
-  #   counter == counter + 1
-  # when trip == "Leela"
-  #   counter == counter + 1
-
+    leela_pilot += 1
   end
-
-
-
 
 end
 
@@ -108,4 +91,7 @@ puts "Bender: #{bender_bonus}"
 puts "Leela: #{leela_bonus}"
 
 puts "How many deliveries did each pilot make?"
-puts "Fry:
+puts "Fry: #{fry_pilot}"
+puts "Amy: #{amy_pilot}"
+puts "Bender: #{bender_pilot}"
+puts "Leela: #{leela_pilot}"
