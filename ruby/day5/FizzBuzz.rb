@@ -13,11 +13,11 @@
 
   (0..30).each do |number|
     #p number
-    if (number % 3 == 0) && (number % 5 == 1)
+    if (number % 3 == 0) && (number % 5 > 0)
       puts "#{number} = Fizz"
     end
 
-    if (number % 5 == 0) && (number % 3 == 1)
+    if (number % 5 == 0) && (number % 3 > 0)
       puts "#{number} = Buzz"
     end
 
