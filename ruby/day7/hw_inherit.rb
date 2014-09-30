@@ -36,3 +36,5 @@ shark.eat
 
 Log.log_event "#{@animal} ate fish!"
 Log.all_events
+
+#########
